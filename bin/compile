@@ -14,12 +14,6 @@ curl https://sh.rustup.rs -sSf > rustup.sh
 chmod +x rustup.sh
 ./rustup.sh -y
 
-source $HOME/.cargo/env
-
-cd "$1"
-# To debug git issues:
-#export RUST_LOG="cargo::sources::git=debug"
-
 echo "-----> Building the Helix extension"
 
 bundle exec rake build
