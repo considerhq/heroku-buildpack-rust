@@ -1,3 +1,4 @@
 #!/bin/sh
 
+echo "Rust (Helix)"
 echo 0
