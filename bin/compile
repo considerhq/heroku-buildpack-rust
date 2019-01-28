@@ -18,4 +18,4 @@ echo "-----> Building the Helix extension"
 
 cd $1
 cd crates/bcmp_wrapper/
-cargo rustc --release -- -C link-args=-Wl,-undefined,dynamic_lookup
+/$HOME/.cargo/bin/cargo rustc --release -- -C link-args=-Wl,-undefined,dynamic_lookup
