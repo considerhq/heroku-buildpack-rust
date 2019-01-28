@@ -16,4 +16,5 @@ chmod +x rustup.sh
 
 echo "-----> Building the Helix extension"
 
-bundle exec rake build
+cd crates/bcmp_wrapper/
+cargo rustc --release -- -C link-args=-Wl,-undefined,dynamic_lookup
