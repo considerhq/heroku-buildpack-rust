@@ -8,19 +8,16 @@ VERSION=1.32.0
 
 URL="https://static.rust-lang.org/dist/$VERSION-x86_64-unknown-linux-gnu.tar.gz"
 
-echo "-----> Downloading Rust binaries"
+echo "-----> Installing Rust"
 
-curl -sSf https://static.rust-lang.org/rustup.sh > rustup.sh
-chmod u+x rustup.sh
-
-echo "-----> Extracting Rust binaries"
-
-./rustup.sh --revision=$VERSION --disable-sudo
-rm rustup.sh
+curl https://sh.rustup.rs -sSf | sh
 
 source $HOME/.cargo/env
 
 cd "$1"
 # To debug git issues:
 #export RUST_LOG="cargo::sources::git=debug"
+
+echo "-----> Building the Helix extension"
+
 bundle exec rake build
