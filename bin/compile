@@ -18,7 +18,5 @@ echo "-----> Building the Helix extension"
 
 cd $1
 
-sleep 10000
-
-cd crates/bcmp_wrapper/
+cd crates/text_helpers/
 /$HOME/.cargo/bin/cargo rustc --release -- -C link-args=-Wl,-undefined,dynamic_lookup
