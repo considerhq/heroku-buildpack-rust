@@ -17,5 +17,8 @@ chmod +x rustup.sh
 echo "-----> Building the Helix extension"
 
 cd $1
+
+sleep 10000
+
 cd crates/bcmp_wrapper/
 /$HOME/.cargo/bin/cargo rustc --release -- -C link-args=-Wl,-undefined,dynamic_lookup
